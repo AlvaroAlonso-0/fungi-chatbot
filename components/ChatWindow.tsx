@@ -6,7 +6,7 @@ import { useState, useEffect, useRef, Fragment } from 'react';
 import Image from 'next/image';
 import { FiSend } from 'react-icons/fi';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'; // Spinner icon
-import logo from '../public/logo.jpg'; // Ensure this path is correct for your logo
+import logo from '../public/logo.jpg';
 
 const ChatWindow = () => {
   const { messages, addMessage } = useChat();

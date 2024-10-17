@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { POST } from '../app/api/chat/route';  // Adjust the import path as necessary
+import { POST } from '../app/api/chat/route'; // Import the POST function
 
 // Mock the global fetch function
 global.fetch = jest.fn();

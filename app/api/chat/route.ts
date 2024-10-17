@@ -6,7 +6,6 @@ export async function POST(request: Request) {
   const { message } = await request.json();
 
   try {
-    // Change this URL to your backend API
     const response = await fetch('http://localhost:8000/api/chat', {
       method: 'POST',
       headers: {

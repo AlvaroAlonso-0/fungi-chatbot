@@ -15,7 +15,6 @@ async def test_get_eth_supply():
     async with AsyncClient(app=app, base_url="http://test") as client:
         response = await client.post("/api/chat", json={"message": "get eth supply"})
         assert response.status_code == 200
-        # You should adjust the expected response based on the actual output from Etherscan
         assert "The total supply of Ethereum is" in response.json()["reply"]
 
 @pytest.mark.asyncio
@@ -23,7 +22,6 @@ async def test_get_eth_price_usd():
     async with AsyncClient(app=app, base_url="http://test") as client:
         response = await client.post("/api/chat", json={"message": "get eth price usd"})
         assert response.status_code == 200
-        # You should adjust the expected response based on the actual output from Etherscan
         assert "The current price of Ethereum is" in response.json()["reply"]
 
 @pytest.mark.asyncio
@@ -31,7 +29,6 @@ async def test_get_eth_price_btc():
     async with AsyncClient(app=app, base_url="http://test") as client:
         response = await client.post("/api/chat", json={"message": "get eth price btc"})
         assert response.status_code == 200
-        # You should adjust the expected response based on the actual output from Etherscan
         assert "The current price of Ethereum is" in response.json()["reply"]
 
 @pytest.mark.asyncio

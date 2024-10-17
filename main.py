@@ -59,7 +59,7 @@ class EtherscanAgent():
         ethprice = get_etherscan_data("stats", "ethprice").get("ethbtc")
 
         if ethprice:
-            return f"The current price of Ethereum is {ethprice} ?"
+            return f"The current price of Ethereum is {ethprice} btc"
 
 # Define the DeFiLlama Agent
 class DefillamaAgent():

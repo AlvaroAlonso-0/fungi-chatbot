@@ -8,3 +8,23 @@ html, body {
   font-family: 'Inter', sans-serif;
   background-color: #F9FAFB; /* Light gray background */
 }
+
+/* Customize the scrollbar for WebKit browsers */
+.chat-window::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.chat-window::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the track */
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background-color: rgb(100, 102, 255); /* Purple color */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* For Firefox */
+.chat-window {
+  scrollbar-width: thin; /* Makes scrollbar thin */
+  scrollbar-color: rgb(100, 102, 255) #f1f1f1; /* thumb color and track color */
+}

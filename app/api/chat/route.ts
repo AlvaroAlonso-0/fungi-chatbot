@@ -2,14 +2,28 @@
 
 import { NextResponse } from 'next/server';
 
-export async function POST(req: Request) {
-  const { message } = await req.json();
+export async function POST(request: Request) {
+  const { message } = await request.json();
 
-  if (!message) {
-    return NextResponse.json({ reply: 'Message is required.' }, { status: 400 });
+  try {
+    // Change this URL to your backend API
+    const response = await fetch('http://localhost:8000/api/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ message }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const data = await response.json();
+
+    return NextResponse.json(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return NextResponse.json({ error: 'Failed to fetch response.' }, { status: 500 });
   }
-
-  // Simulate a response from the chatbot.
-  const botReply = `You said: ${message}`;
-  return NextResponse.json({ reply: botReply });
 }

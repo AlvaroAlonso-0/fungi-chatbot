@@ -95,11 +95,7 @@ class DefillamaAgent():
         try:
             # Retrieve data for the specific pool by its ID
             pool_data = get_defillama_data(f"chart/{pool_id}")
-
-            # Print the pool data in a text file for debugging
-            with open("pool_data_id_d4b3c522-6127-4b89-bedf-83641cdcd2eb.txt", "w") as f:
-                f.write(json.dumps(pool_data, indent=4))
-
+            
             # Check if the response status indicates success
             if pool_data['status'] == 'success':
                 # Format pool information
